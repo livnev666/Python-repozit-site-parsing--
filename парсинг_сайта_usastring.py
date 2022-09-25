@@ -56,7 +56,7 @@ def arrows_north():
         res = requests.get(i, headers=headers).text
         soup_2 = BeautifulSoup(res, 'lxml')
         name_string = soup_2.find('h1', class_='pr_h1').text
-        discound_string = soup_2.find('div', class_='desc_hide_pr').text
+        description_string = soup_2.find('div', class_='desc_hide_pr').text
         price_string = soup_2.find('span', class_='autocalc-product-special').text
         image_link = soup_2.find('div', class_='col-xs-12 col-sm-12').find('img').get('src')
         downloads_img(image_link)
@@ -68,7 +68,7 @@ def arrows_north():
             value_key = j.find_all('span')[1].text
             dict_value[key_name] = value_key
             # lst.append(dict_value)
-            yield name_string, discound_string, price_string, image_link
+            yield name_string, description_string, price_string, image_link
 
 
 
