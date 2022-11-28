@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import fake_useragent
 import json
-import pandas as pd
+
 
 
 
@@ -29,6 +29,7 @@ with open('string_index.html', encoding='utf-8') as file:
     response = file.read()
 
 soup = BeautifulSoup(response, 'lxml')
+print(soup)
 
 
 list_all_6_strings = soup.find('div', class_='row rowf flex_height_row').find_all('div', class_='gtile-i-wrap')
